@@ -52,6 +52,26 @@ pydantic>=2.0.0                 # Data validation
 tenacity>=8.2.0                 # Retry logic
 loguru>=0.7.0                   # Better logging
 
+# Multi-Asset Support
+ccxt>=4.2.0                      # Unified cryptocurrency exchange API
+python-binance>=1.0.19           # Binance API (crypto)
+coinbase>=2.1.0                  # Coinbase API (crypto)
+QuantLib-Python>=1.31            # Options pricing (advanced, optional)
+
+# Machine Learning - Ensemble Methods (Phase 1 - START HERE!)
+xgboost>=2.0.0                   # XGBoost gradient boosting
+lightgbm>=4.1.0                  # LightGBM gradient boosting
+catboost>=1.2.0                  # CatBoost gradient boosting
+scikit-learn>=1.3.0              # Random Forest, preprocessing
+
+# Machine Learning - Deep Learning (Phase 2)
+torch>=2.1.0                     # PyTorch for LSTM/neural networks
+torchvision>=0.16.0              # PyTorch vision utilities
+
+# Machine Learning - AutoML (Phase 3)
+optuna>=3.5.0                    # Hyperparameter optimization
+mlflow>=2.9.0                    # Experiment tracking (optional)
+
 # Development & Testing
 pytest>=7.4.0
 pytest-asyncio>=0.21.0
