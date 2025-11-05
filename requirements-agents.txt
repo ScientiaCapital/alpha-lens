@@ -33,6 +33,19 @@ pyfolio>=0.9.2                  # Portfolio analysis (Quantopian)
 empyrical>=0.5.0                # Financial metrics
 zipline-reloaded>=2.4.0         # Backtesting framework (optional)
 
+# Broker Integrations
+alpaca-py>=0.14.0               # Alpaca broker API
+ib_insync>=0.9.86               # Interactive Brokers (optional)
+
+# Data Feeds
+yfinance>=0.2.28                # Yahoo Finance data (free)
+alpaca-py>=0.14.0               # Alpaca data feed (included above)
+
+# Dashboard & Visualization
+streamlit>=1.28.0               # Streamlit dashboard
+plotly>=5.17.0                  # Interactive charts
+requests>=2.31.0                # HTTP requests for API client
+
 # Utilities
 python-dotenv>=1.0.0            # Environment variables
 pydantic>=2.0.0                 # Data validation
