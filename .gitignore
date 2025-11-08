@@ -1,24 +1,107 @@
-
-*.xml
-
-*.iml
-
+# Python
 *.pyc
-
+*.pyo
+*.pyd
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
 build/
-docs/build/
-.ipynb_checkpoints
+.eggs/
+*.whl
 
-# Tox puts virtualenvs here by default.
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv
 .tox/
 
-# coverage.py outputs.
-cover
-.coverage
-
-# Intermediate outputs from building distributions for PyPI.
-dist
-*.egg-info/
-
-# Emacs temp files.
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
 *~
+*.iml
+.project
+.pydevproject
+.settings/
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+cover/
+*.cover
+.hypothesis/
+.coverage.*
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# Documentation
+docs/build/
+docs/_build/
+site/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.log
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.cert
+secrets.yaml
+credentials.json
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache & Monitoring
+.cache/
+.monitoring/
+*.cache
+logs/
+*.log
+
+# Build artifacts
+*.xml
+build/
+dist/
+target/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+
+# Alembic (when we add it)
+# alembic/versions/*.pyc
+
+# Local development
+local/
+scratch/
