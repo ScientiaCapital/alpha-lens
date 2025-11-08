@@ -1,0 +1,89 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alpha-lens"
+version = "1.0.0"
+description = "AI-powered multi-asset alpha factor analysis platform with autonomous trading agents"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "ScientiaCapital", email = "info@scientiacapital.com"}
+]
+maintainers = [
+    {name = "ScientiaCapital", email = "info@scientiacapital.com"}
+]
+keywords = [
+    "quantitative finance",
+    "algorithmic trading",
+    "alpha factors",
+    "machine learning",
+    "ai agents",
+    "trading",
+    "finance",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "matplotlib>=3.3.0",
+    "numpy>=1.19.0",
+    "pandas>=1.1.0",
+    "scipy>=1.5.0",
+    "seaborn>=0.11.0",
+    "statsmodels>=0.12.0",
+    "IPython>=7.16.0",
+]
+
+[project.optional-dependencies]
+agents = [
+    "anthropic>=0.18.0",
+    "langchain>=0.1.0",
+    "langgraph>=0.0.20",
+    "psycopg2-binary>=2.9.0",
+    "redis>=5.0.0",
+    "streamlit>=1.28.0",
+    "alpaca-py>=0.8.0",
+]
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "flake8>=6.0.0",
+]
+all = [
+    "anthropic>=0.18.0",
+    "langchain>=0.1.0",
+    "langgraph>=0.0.20",
+    "psycopg2-binary>=2.9.0",
+    "redis>=5.0.0",
+    "streamlit>=1.28.0",
+    "alpaca-py>=0.8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ScientiaCapital/alpha-lens"
+Documentation = "https://github.com/ScientiaCapital/alpha-lens"
+Repository = "https://github.com/ScientiaCapital/alpha-lens"
+"Bug Tracker" = "https://github.com/ScientiaCapital/alpha-lens/issues"
+
+[tool.setuptools]
+packages = ["alphalens"]
+
+[tool.setuptools.package-data]
+alphalens = ["examples/*"]

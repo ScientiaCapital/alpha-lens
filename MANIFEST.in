@@ -1,3 +1,8 @@
-include versioneer.py
-include alphalens/_version.py
+include README.md
 include LICENSE
+include CLAUDE.md
+include .env.example
+include requirements-agents.txt
+include pyproject.toml
+recursive-include alphalens/examples *
+recursive-include alphalens *.py

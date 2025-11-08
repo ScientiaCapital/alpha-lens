@@ -1,62 +1,87 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
-import versioneer
 import sys
 
 long_description = ''
 
-if 'upload' in sys.argv:
-    with open('README.rst') as f:
-        long_description = f.read()
+if 'upload' in sys.argv or 'sdist' in sys.argv:
+    try:
+        with open('README.md', encoding='utf-8') as f:
+            long_description = f.read()
+    except FileNotFoundError:
+        long_description = 'AI-powered multi-asset alpha factor analysis platform'
 
+# Core dependencies for basic alpha factor analysis
 install_reqs = [
-    'matplotlib>=1.4.0',
-    'numpy>=1.9.1',
-    'pandas>=0.18.0',
-    'scipy>=0.14.0',
-    'seaborn>=0.6.0',
-    'statsmodels>=0.6.1',
-    'IPython>=3.2.3',
-    'empyrical>=0.5.0',
+    'matplotlib>=3.3.0',
+    'numpy>=1.19.0',
+    'pandas>=1.1.0',
+    'scipy>=1.5.0',
+    'seaborn>=0.11.0',
+    'statsmodels>=0.12.0',
+    'IPython>=7.16.0',
+]
+
+# Optional AI agents and advanced features
+agents_reqs = [
+    'anthropic>=0.18.0',
+    'langchain>=0.1.0',
+    'langgraph>=0.0.20',
+    'psycopg2-binary>=2.9.0',
+    'redis>=5.0.0',
+    'streamlit>=1.28.0',
+    'alpaca-py>=0.8.0',
 ]
 
 extra_reqs = {
     'test': [
-        "nose>=1.3.7",
-        "parameterized>=0.5.0",
-        "tox>=2.3.1",
-        "flake8>=3.7.9",
+        "pytest>=7.0.0",
+        "pytest-cov>=4.0.0",
+        "flake8>=6.0.0",
     ],
+    'agents': agents_reqs,
+    'all': agents_reqs,
 }
 
 if __name__ == "__main__":
     setup(
-        name='alphalens',
-        version=versioneer.get_version(),
-        cmdclass=versioneer.get_cmdclass(),
-        description='Performance analysis of predictive (alpha) stock factors',
-        author='Quantopian Inc.',
-        author_email='opensource@quantopian.com',
-        packages=find_packages(include='alphalens.*'),
+        name='alpha-lens',
+        version='1.0.0',
+        description='AI-powered multi-asset alpha factor analysis platform with autonomous trading agents',
+        long_description=long_description,
+        long_description_content_type='text/markdown',
+        author='ScientiaCapital',
+        author_email='info@scientiacapital.com',
+        maintainer='ScientiaCapital',
+        packages=find_packages(include=['alphalens', 'alphalens.*']),
         package_data={
             'alphalens': ['examples/*'],
         },
-        long_description=long_description,
         classifiers=[
-            'Development Status :: 5 - Production/Stable',
+            'Development Status :: 4 - Beta',
             'Intended Audience :: Developers',
+            'Intended Audience :: Financial and Insurance Industry',
+            'Intended Audience :: Science/Research',
             'License :: OSI Approved :: Apache Software License',
             'Natural Language :: English',
             'Operating System :: OS Independent',
-            'Programming Language :: Python :: 2.7',
-            'Programming Language :: Python :: 3.4',
-            'Programming Language :: Python :: 3.5',
-            'Programming Language :: Python',
-            'Topic :: Utilities',
-            'Topic :: Office/Business :: Financial',
+            'Programming Language :: Python :: 3',
+            'Programming Language :: Python :: 3.8',
+            'Programming Language :: Python :: 3.9',
+            'Programming Language :: Python :: 3.10',
+            'Programming Language :: Python :: 3.11',
+            'Topic :: Office/Business :: Financial :: Investment',
+            'Topic :: Scientific/Engineering :: Artificial Intelligence',
             'Topic :: Scientific/Engineering :: Information Analysis',
         ],
-        url='https://github.com/quantopian/alphalens',
+        url='https://github.com/ScientiaCapital/alpha-lens',
+        project_urls={
+            'Documentation': 'https://github.com/ScientiaCapital/alpha-lens',
+            'Source': 'https://github.com/ScientiaCapital/alpha-lens',
+            'Tracker': 'https://github.com/ScientiaCapital/alpha-lens/issues',
+        },
+        python_requires='>=3.8',
         install_requires=install_reqs,
         extras_require=extra_reqs,
+        keywords='quantitative finance algorithmic trading alpha factors machine learning ai agents',
     )
